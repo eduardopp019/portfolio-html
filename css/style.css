@@ -17,3 +17,29 @@ body{overflow-x:hidden}.ui-arrow{display:inline-block;font-size:.72em;line-heigh
 @media(max-width:760px){.site-header{padding:22px max(20px,env(safe-area-inset-right)) 22px max(20px,env(safe-area-inset-left));align-items:center}.brand{font-size:22px}nav{gap:clamp(8px,3vw,14px);font-size:9px}nav a{min-height:44px;display:flex;align-items:center}.hero{min-height:100svh;padding:132px max(20px,env(safe-area-inset-right)) max(28px,env(safe-area-inset-bottom)) max(20px,env(safe-area-inset-left));gap:34px}.hero-kicker{font-size:10px;line-height:1.55;max-width:270px}.hero h1{font-size:clamp(4rem,22.5vw,7rem);line-height:.82;letter-spacing:-.075em}.hero-bottom{flex-direction:column;align-items:flex-start;gap:24px}.hero-bottom p{font-size:1rem;line-height:1.5;max-width:31rem}.round-link{width:58px;height:58px;font-size:24px}.manifesto,.work,.contact{padding:76px max(20px,env(safe-area-inset-right)) 76px max(20px,env(safe-area-inset-left))}.manifesto>p{font-size:clamp(2.5rem,12vw,4.6rem);line-height:1;margin:52px 0 76px}.about-grid p{font-size:17px;line-height:1.55}.services{font-size:10px}.section-heading{margin-bottom:40px}.section-heading h2{font-size:clamp(4rem,19vw,7rem)}.project{grid-template-columns:30px minmax(0,1fr) 30px;grid-template-rows:auto auto auto;gap:8px 12px;min-height:auto;padding:26px 0}.project:hover{padding:26px 12px}.project-number{grid-column:1;grid-row:1}.project-title{grid-column:2;grid-row:1;font-size:clamp(1.55rem,7.3vw,2.6rem);line-height:1.04}.project-kind{display:block;grid-column:2;grid-row:2;font-size:9px;line-height:1.45;padding-right:8px}.project-year{display:block;grid-column:2;grid-row:3;color:#777}.project:hover .project-year{color:#222}.project-arrow{grid-column:3;grid-row:1/4;align-self:center;font-size:22px}.contact{min-height:72svh}.contact-lead{margin-top:72px;font-size:clamp(1.8rem,8vw,3rem)}.contact-link{align-items:center;gap:18px;font-size:clamp(3rem,13vw,5.5rem);line-height:.92;padding-bottom:20px}.contact-link .ui-arrow{flex:0 0 auto;font-size:.55em}.social-links{flex-wrap:wrap;gap:10px 24px;margin-top:28px}.social-link{font-size:10px}footer{padding-top:80px;gap:18px}.back-to-top{min-height:44px}}
 
 @media(max-width:390px){.site-header{grid-template-columns:auto 1fr;gap:12px}.site-header nav{justify-self:end;gap:9px}.brand{font-size:20px}.hero{padding-top:124px}.hero h1{font-size:22vw}.contact-link{font-size:12.5vw}.project-kind{font-size:8px}}
+
+/* Correções de proporção para telas pequenas e Safari/iPhone */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.ui-arrow{font-size:16px}
+.round-link{box-sizing:border-box;flex:0 0 72px;min-width:72px;min-height:72px;aspect-ratio:1;padding:0;line-height:1}
+.round-link .ui-arrow{display:grid;width:18px;height:18px;place-items:center;font-size:18px}
+.project-arrow .ui-arrow{font-size:20px}
+.contact-link .ui-arrow{font-size:clamp(30px,4vw,58px)}
+.back-to-top .ui-arrow{font-size:11px}
+
+@media(max-width:760px){
+  .hero h1{width:100%;max-width:100%;font-size:clamp(3.15rem,18.2vw,6rem);line-height:.84;letter-spacing:-.075em}
+  .name-line{max-width:none;white-space:nowrap}
+  .vertical-note{display:none!important}
+  .round-link{flex-basis:58px;width:58px;min-width:58px;height:58px;min-height:58px;border-radius:50%}
+  .round-link .ui-arrow{width:17px;height:17px;font-size:17px}
+  .project-arrow{width:30px;height:44px;font-size:initial}
+  .project-arrow .ui-arrow{font-size:17px}
+  .contact-link .ui-arrow{font-size:clamp(24px,7vw,34px)}
+  .back-to-top .ui-arrow{font-size:10px}
+}
+
+@media(max-width:390px){
+  .hero h1{font-size:clamp(3.15rem,18.2vw,4.45rem)}
+  .round-link{flex-basis:56px;width:56px;min-width:56px;height:56px;min-height:56px}
+}
